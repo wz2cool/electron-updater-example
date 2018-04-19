@@ -5,6 +5,7 @@ const {app, BrowserWindow, Menu, protocol, ipcMain} = require('electron');
 const log = require('electron-log');
 const {autoUpdater} = require("electron-updater");
 
+console.log("hello world")
 //-------------------------------------------------------------------
 // Logging
 //
@@ -68,6 +69,7 @@ function createDefaultWindow() {
   return win;
 }
 autoUpdater.on('checking-for-update', () => {
+  console.log('check updater=====================')
   sendStatusToWindow('Checking for update...');
 })
 autoUpdater.on('update-available', (info) => {
